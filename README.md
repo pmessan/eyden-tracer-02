@@ -1,17 +1,17 @@
 # Practical Assignment 2
 Please put your name (or names if you work in a group) here:  
-**Name**: .......
+**Name**: Peter-Newman Messan
 ## Problem 2.2
 ### Encapsulate camera and primitives from main application logic (Points 5)
-1. Fork the current repository
-2. Study the new framework-code of 
+1. ✅Fork the current repository
+2. ✅Study the new framework-code of 
     - IShader.h, ShaderFlat.h, ShaderEyeLight.h, ShaderPhong.h
     - ILight.h, LightPoint.h, LightArea.h 
     - Scene.h and main.cpp
-3. A pointer ```CPrim* hit``` is now contained in your ```Ray``` structure. After a ray has been successfully intersected with a primitive, store the primitive’s address in ```hit``` (if the hit ditance is smaller than ```ray.t```).
-4. In the class ```CScene``` you find a method ```void Add(const std::shared_ptr<CPrim> pPrim)```. Change your code accordingly using the appropriate vector defined in the class.
-5. Rather then intersecting each primitive in the main function we will now use the ```bool Intersect(Ray& ray) const``` method of the ```Scene``` class. After modification the method should iterate over all primitives, intersect them and return true or false depending on if we had a valid hit with the scene data or not.
-6. The loop of main.cpp calls the ```CScene::RayTrace(Ray& ray)``` method. This method should call ```bool Intersect(Ray& ray) ``` and depending on a hit or not return a white or black color.
+3. ✅A pointer ```CPrim* hit``` is now contained in your ```Ray``` structure. After a ray has been successfully intersected with a primitive, store the primitive’s address in ```hit``` (if the hit ditance is smaller than ```ray.t```).
+✅4. In the class ```CScene``` you find a method ```void Add(const std::shared_ptr<CPrim> pPrim)```. Change your code accordingly using the appropriate vector defined in the class.
+✅5. Rather then intersecting each primitive in the main function we will now use the ```bool Intersect(Ray& ray) const``` method of the ```Scene``` class. After modification the method should iterate over all primitives, intersect them and return true or false depending on if we had a valid hit with the scene data or not.
+✅6. The loop of main.cpp calls the ```CScene::RayTrace(Ray& ray)``` method. This method should call ```bool Intersect(Ray& ray) ``` and depending on a hit or not return a white or black color.
 
 ## Problem 2.3
 ### The Surface-Shader Concept (Points 10 + 10)
@@ -36,7 +36,7 @@ where _theta_ is the angle between the primitive surface normal and the ray dire
 In the last exercise we implemented two simple surface shaders, which do not take light sources into account. A more advanced surface shading concept, the _phong shading model_, utilizes light sources to increase the rendering realism and give objects a plastic like appearance. Before we can implement the ```CShaderPhong::Shade(const Ray& ray)``` method in ShaderPhong.h we have to implement a simple light source.
 1. Implement a point light. Proceed as follows:
     - Study the base interface class ```ILight```. Each light source which we will derive from it has to implement an ```ILight::Illuminate(Ray& ray)``` method.
-    - Implement the ```CScene::Add(std::shared_ptr<ILight> pLight)``` method.
+    - ✅Implement the ```CScene::Add(std::shared_ptr<ILight> pLight)``` method.
     - Implement the ```CLightPoint::Illuminate(Ray& ray)``` method. The method should calculate the light intensity, as described in the lecture, which hits the surface point from the light source as well as the direction vector from the surface point to the light source. The direction vector will be later used for shadow computations.
 2. Implement the _phong illumination model_
     - The value _L<sub>r</sub>_ returned by ```CShaderPhong::Illuminate(Ray& ray)``` should be calculated according to:

@@ -53,14 +53,19 @@ public:
 		if (ray.t <= f || f <  Epsilon  ) return false;
 		
 		ray.t = f;
-		
+		ray.hit = (std::shared_ptr<CPrim>)this;	//stores the address in ray.hit
 		return true;
 	}
 
 	virtual Vec3f GetNormal(const Ray& ray) const override
 	{
+		
 		// --- PUT YOUR CODE HERE ---
-		return Vec3f();
+		Vec3f p, q;
+		p = m_b - m_a;
+		q = m_c - m_a;
+
+		return normalize(p.cross(q));
 	}
 	
 private:

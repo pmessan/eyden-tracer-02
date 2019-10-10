@@ -22,7 +22,11 @@ public:
 	virtual Vec3f Shade(const Ray& ray) const override
 	{
 		// --- PUT YOUR CODE HERE ---
-		return RGB(0, 0, 0);
+		 Vec3f N;
+		
+		N = ray.hit->GetNormal(ray);
+		double x = (N.dot(ray.dir))/ (norm(ray.dir) * norm(N));
+		return CShaderFlat::Shade(ray)*abs(x);
 	}
 };
 
