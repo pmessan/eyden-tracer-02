@@ -1,6 +1,6 @@
 # Practical Assignment 2
 Please put your name (or names if you work in a group) here:  
-**Name**: Peter-Newman Messan
+**Name**: Peter-Newman Messan, (with Edwin Agbakpe &  Aron Jinga)
 ## Problem 2.2
 ### Encapsulate camera and primitives from main application logic (Points 5)
 1. ✅Fork the current repository
