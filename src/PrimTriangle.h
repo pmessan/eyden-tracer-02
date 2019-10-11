@@ -53,7 +53,7 @@ public:
 		if (ray.t <= f || f <  Epsilon  ) return false;
 		
 		ray.t = f;
-		ray.hit = (std::shared_ptr<CPrim>)this;	//stores the address in ray.hit
+		ray.hit = this;	//stores the address in ray.hit
 		return true;
 	}
 
